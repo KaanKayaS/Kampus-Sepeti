@@ -31,7 +31,7 @@ Exception Handling: Global Exception Middleware
 Real-time Communication: SignalR ile canlı mesajlaşma
 
 Database & ORM:
-  Entity Framework Core ile Code-First yaklaşımı![girisekranı](https://github.com/user-attachments/assets/f211f0f2-abc0-4bd6-b53f-9f7b9ac6b98b)
+  Entity Framework Core ile Code-First yaklaşımı
   SQL Server veritabanı
   Migration yönetimi
 
