@@ -31,7 +31,7 @@ Exception Handling: Global Exception Middleware
 Real-time Communication: SignalR ile canlı mesajlaşma
 
 Database & ORM:
-  Entity Framework Core ile Code-First yaklaşımı
+  Entity Framework Core ile Code-First yaklaşımı![girisekranı](https://github.com/user-attachments/assets/f211f0f2-abc0-4bd6-b53f-9f7b9ac6b98b)
   SQL Server veritabanı
   Migration yönetimi
 
@@ -42,3 +42,10 @@ Frontend:
   Modern ve responsive UI tasarımı
 
 🎉 Etkinlik sayfası, Etkinlik.io API’si entegre edilerek canlı ve güncel etkinliklerle zenginleştirilmiştir.
+
+![girisekranı](https://github.com/user-attachments/assets/9f04b5f0-5229-46e9-b52f-1065ee7cd97e)
+![ilanlarım](https://github.com/user-attachments/assets/635b0682-1c92-45c3-8069-1f4d76589245)
+![etkinlik](https://github.com/user-attachments/assets/983ca2f4-7e4c-4f56-8dc9-406a885ffa6f)
+![aatt](https://github.com/user-attachments/assets/e5752d51-32f2-44db-b9d4-246961a12142)
+
+
