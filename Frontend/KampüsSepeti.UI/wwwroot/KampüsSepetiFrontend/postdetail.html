@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Detayı - KampüsSepeti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="postdetail.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="k-logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a href="index.html">İlanlar</a>
+            <a href="#etkinlikler">Etkinlikler</a>
+            <a href="announcement.html">Duyurular</a>
+        </div>
+        <div class="nav-right">
+            <!-- Auth Buttons -->
+            <a href="login.html" class="auth-btn">Giriş Yap</a>
+            <a href="register.html" class="auth-btn">Kayıt Ol</a>
+            
+            <!-- Bildirimler -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            
+            <!-- Mesajlar -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-envelope"></i>
+                <span class="notification-badge">2</span>
+            </div>
+            
+            <!-- İlan Oluştur -->
+            <a href="create-listing.html" class="create-listing-btn">
+                <i class="fas fa-plus"></i>
+                İlan Oluştur
+            </a>
+            
+            <!-- Profil Dropdown -->
+            <div class="profile-dropdown">
+                <div class="profile-trigger">
+                    <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="profile-menu">
+                    <div class="profile-header">
+                        <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                        <div class="profile-info">
+                            <span class="profile-name">Kaan Kaya</span>
+                            <span class="profile-email"><strong>0</strong> Takip <strong>0</strong> Takipçi</span>
+                        </div>
+                    </div>
+                    <div class="profile-links">
+                        <a href="myposts.html" class="profile-link">
+                            <i class="bi bi-card-list"></i>
+                            İlanlarım
+                        </a>
+                        <a href="myfavorite.html" class="profile-link">
+                            <i class="bi bi-heart"></i>
+                            Favorilerim
+                        </a>
+                        <a href="#" class="profile-link">
+                            <i class="bi bi-gear"></i>
+                            Ayarlar
+                        </a>
+                    </div>
+                    <div class="profile-footer">
+                        <a href="#" class="logout-btn">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Çıkış Yap
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- Sol taraf - Ürün görseli -->
+            <div class="product-image-container">
+                <img src="https://picsum.photos/800/800" alt="Ürün Görseli" class="product-image">
+            </div>
+            
+            <!-- Sağ taraf - Satıcı bilgileri -->
+            <div class="seller-card">
+                <div class="seller-profile">
+                    <div class="profile-header">
+                        <img src="https://picsum.photos/200" alt="Satıcı Profili" class="profile-image">
+                        <div class="profile-info">
+                            <a href="profile.html" class="seller-name">Tktktk06</a>
+                            <span class="member-since">Oca 2019'dan beri üye</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="seller-actions">
+                    <button class="chat-btn">Sohbet</button>
+                    <button class="follow-btn">
+                        <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span>Takip Et</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alt kısım - Ürün detayları -->
+        <div class="product-details">
+            <div class="main-info">
+                <h1 class="product-title">iPad 7 128gb</h1>
+                <div class="price-location">
+                    <div class="price-wishlist">
+                        <span class="price">8.299 TL</span>
+                        <button class="wishlist-btn">
+                            <svg class="wishlist-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span class="wishlist-tooltip">İstek Listesine Ekle</span>
+                        </button>
+                    </div>
+                    <span class="location">
+                        <svg class="location-icon" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        Beyoğlu, İstanbul
+                    </span>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">İlan No:</span>
+                        <span class="value">1699739591</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Marka:</span>
+                        <span class="value">Apple</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Durum:</span>
+                        <span class="value">Yeni Gibi</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Kategori:</span>
+                        <span class="value">Tablet</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">İlan Tarihi:</span>
+                        <span class="value">24 Ara 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description">
+                <h3>İlan Açıklaması</h3>
+                <p>Orijinal kalem ve şarj aleti mevcuttur. ��ok temiz kullanılmıştır, bataryası iyi durumdadır. Şarjı 1 gün gitmektedir.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="postdetail.js"></script>
+</body>
+</html>

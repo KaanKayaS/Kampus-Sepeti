@@ -1,0 +1,223 @@
+:root {
+    --primary-color: #5b21b6;    /* Koyu mor */
+    --accent-color: #8b5cf6;     /* Açık mor */
+    --hover-color: #7c3aed;      /* Hover için mor */
+    --text-light: #ffffff;       /* Beyaz metin */
+    --text-dark: #1f2937;        /* Koyu metin */
+    --input-border: #e5e7eb;     /* Input kenarlıkları */
+    --bg-opacity: 0.95;          /* Hafif saydam beyaz için */
+    --overlay-opacity: 0.3;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --login-box-bg: rgba(255, 255, 255, 0.65); /* Daha saydam beyaz arka plan (0.85'ten 0.65'e düşürdük) */
+    --text-color: #1f2937;       /* Açık tema için koyu metin */
+}
+
+[data-theme="dark"] {
+    --primary-color: #8b5cf6;
+    --accent-color: #7c3aed;
+    --hover-color: #6d28d9;
+    --text-light: #ffffff;
+    --text-dark: #e5e7eb;
+    --input-border: #4b5563;
+    --bg-opacity: 0.2;
+    --overlay-opacity: 0.5;
+    --box-shadow: rgba(0, 0, 0, 0.4);
+    --login-box-bg: rgba(91, 33, 182, 0.2); /* Koyu tema için mor arka plan */
+    --text-color: #ffffff;       /* Koyu tema için beyaz metin */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-image: url('mezuniyet.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, var(--overlay-opacity)); /* Hafif siyah overlay */
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.login-box {
+    background: var(--login-box-bg);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px var(--box-shadow);
+    width: 400px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+    opacity: 0.8;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: var(--accent-color); /* Sarı yerine mor */
+}
+
+.input-group input:focus {
+    border-bottom-color: var(--accent-color); /* Sarı yerine mor */
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color); /* Mavi yerine koyu mor */
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.login-btn:hover {
+    background: var(--accent-color); /* Sarı yerine açık mor */
+    color: var(--text-light); /* Koyu mavi yerine beyaz */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.links a:hover {
+    color: var(--accent-color); /* Sarı yerine mor */
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+}
+
+/* Eski container overlay'ini kaldıralım */
+.container::before {
+    display: none;
+}
+
+/* Tema değiştirme butonu stilleri */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle button {
+    background: var(--login-box-bg);
+    color: var(--text-color);
+    backdrop-filter: blur(8px);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle button:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.1);
+}
+
+.theme-toggle .sun-icon,
+.theme-toggle .moon-icon {
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle .sun-icon {
+    opacity: 1;
+}
+
+.theme-toggle .moon-icon {
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    opacity: 1;
+}

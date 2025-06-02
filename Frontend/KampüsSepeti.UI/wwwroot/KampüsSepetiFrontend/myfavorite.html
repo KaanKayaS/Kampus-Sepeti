@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlanlarım</title>
+    <link rel="stylesheet" href="myposts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="k-logo.png" alt="Logo">
+            </a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lokasyon 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="citySearch" placeholder="Şehir ara...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="cities-list">
+                        <a href="#" data-city="istanbul"><i class="fas fa-city"></i> İstanbul</a>
+                        <a href="#" data-city="ankara"><i class="fas fa-city"></i> Ankara</a>
+                        <a href="#" data-city="izmir"><i class="fas fa-city"></i> İzmir</a>
+                        <a href="#" data-city="bursa"><i class="fas fa-city"></i> Bursa</a>
+                        <a href="#" data-city="antalya"><i class="fas fa-city"></i> Antalya</a>
+                        <a href="#" data-city="adana"><i class="fas fa-city"></i> Adana</a>
+                        <a href="#" class="all-cities" data-city="all"><i class="fas fa-globe"></i> Tüm Şehirler</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="index.html">İlanlar</a>
+            <a href="#etkinlikler">Etkinlikler</a>
+            <a href="announcement.html">Duyurular</a>
+        </div>
+        <div class="nav-right">
+            <!-- Auth Buttons -->
+            <a href="login.html" class="auth-btn">Giriş Yap</a>
+            <a href="register.html" class="auth-btn">Kayıt Ol</a>
+            
+            <!-- Bildirimler -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            
+            <!-- Mesajlar -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-envelope"></i>
+                <span class="notification-badge">2</span>
+            </div>
+            
+            <!-- İlan Oluştur -->
+            <a href="create-listing.html" class="create-listing-btn">
+                <i class="fas fa-plus"></i>
+                İlan Oluştur
+            </a>
+            
+            <!-- Profil Dropdown -->
+            <div class="profile-dropdown">
+                <div class="profile-trigger">
+                    <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="profile-menu">
+                    <div class="profile-header">
+                        <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                        <div class="profile-info">
+                            <span class="profile-name">Kaan Kaya</span>
+                            <span class="profile-email"><strong>0</strong> Takip <strong>0</strong> Takipçi</span>
+                        </div>
+                    </div>
+                    <div class="profile-links">
+                        <a href="myposts.html" class="profile-link">
+                            <i class="bi bi-card-list"></i>
+                            İlanlarım
+                        </a>
+                        <a href="myfavorite.html" class="profile-link">
+                            <i class="bi bi-heart"></i>
+                            Favorilerim
+                        </a>
+                        <a href="#" class="profile-link">
+                            <i class="bi bi-gear"></i>
+                            Ayarlar
+                        </a>
+                    </div>
+                    <div class="profile-footer">
+                        <a href="#" class="logout-btn">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Çıkış Yap
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <div class="posts-header">
+            <h1>Favorilerim</h1>
+        </div>
+
+        <div class="posts-container">
+            <!-- İlan Kartı 1 -->
+            <div class="post-card">
+                <div class="post-date">
+                    <span class="date-label">Yayın Tarihi</span>
+                    <span class="date">29 Tem 2023</span>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="post-image">
+                    <img src="https://picsum.photos/150/150" alt="Ürün Görseli">
+                </div>
+                
+                <div class="post-info">
+                    <a href="postdetail.html" class="post-title">Casper Monitor 60 hz</a>
+                </div>
+                
+                <div class="post-price">
+                    800 TL
+                </div>
+                            
+                <div class="post-actions">
+                    <button class="delete-btn">
+                        <i class="bi bi-trash"></i>
+                         Favorilerden Kaldır
+                    </button>
+                </div>
+            </div>
+
+            <!-- İlan Kartı 2 -->
+            <div class="post-card">
+                <div class="post-date">
+                    <span class="date-label">Yayın Tarihi</span>
+                    <span class="date">9 Tem 2023</span>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="post-image">
+                    <img src="https://picsum.photos/150/150?random=2" alt="Ürün Görseli">
+                </div>
+                
+                <div class="post-info">
+                    <a href="postdetail.html" class="post-title">Yatak baza + başlık</a>
+                  
+                </div>
+                
+                <div class="post-price">
+                    1.100 TL
+                </div>            
+                
+                <div class="post-actions">
+                    <button class="delete-btn">
+                        <i class="bi bi-trash"></i>
+                         Favorilerden Kaldır
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="myposts.js"></script>
+</body>
+</html>

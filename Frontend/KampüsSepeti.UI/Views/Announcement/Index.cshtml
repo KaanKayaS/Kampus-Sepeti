@@ -1,0 +1,113 @@
+﻿@model List<KampüsSepeti.Application.Features.Results.AnnouncementResults.GetAllAnnouncementQueryResult>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Default/Index.cshtml";
+}
+
+<link rel="stylesheet" href="~/KampüsSepetiFrontend/announcement.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+<div class="container">
+    <div class="page-header">
+        <h2>Duyurular</h2>
+        <a href="@Url.Action("Create", "Announcement")" class="create-announcement-btn">
+            <i class="bi bi-plus-circle-fill"></i>
+            <span>Yeni Duyuru</span>
+        </a>
+    </div>
+    <div class="content-wrapper">
+        <div class="announcement-table">
+            <div class="table-header">
+                <div class="header-cell">Başlık</div>
+                <div class="header-cell">Kullanıcı</div>
+                <div class="header-cell">Lokasyon</div>
+                <div class="header-cell">Etkileşim</div>
+            </div>
+
+            <div class="table-content">
+                @foreach (var announcement in Model)
+                {
+                    <div class="table-row">
+                        <div class="cell title-cell">
+                            <a href="@Url.Action("Detail", "Announcement", new { id = announcement.Id })" class="announcement-title">@announcement.Title</a>
+                        </div>
+                        <div class="cell user-cell">
+                            <img src="@(string.IsNullOrEmpty(announcement.UserImage) ? Url.Content("~/KampüsSepetiFrontend/default.jpg") : $"http://localhost:5000{announcement.UserImage}")"
+                             alt="User"
+                             class="user-image"
+                             onerror="this.src='@Url.Content("~/KampüsSepetiFrontend/default.jpg")'">
+                            <span class="username">@announcement.UserName</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>@announcement.LocationName</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>@announcement.commentCount</span>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Sayfalama -->
+            <div class="pagination">
+                <div class="page-numbers">
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        if (i == ViewBag.CurrentPage)
+                        {
+                            <span class="pagination-btn page-btn active" title="Sayfa @i">@i</span>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Index", new { page = i })" class="pagination-btn page-btn" title="Sayfa @i">@i</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Popüler Duyurular -->
+        <div class="popular-announcements">
+            <h3 class="popular-title">
+                <i class="bi bi-graph-up-arrow"></i>
+                Popüler Duyurular
+            </h3>
+            <div class="popular-list">
+                @{
+                    var popularAnnouncements = ((List<KampüsSepeti.Application.Features.Results.AnnouncementResults.GetAllAnnouncementQueryResult>)ViewBag.AllAnnouncements)
+                        .OrderByDescending(a => a.commentCount)
+                        .Take(3)
+                        .ToList();
+                    foreach (var announcement in popularAnnouncements)
+                    {
+                        <a href="@Url.Action("Detail", "Announcement", new { id = announcement.Id })" class="popular-item">
+                            <div class="popular-header">
+                                <h4>@announcement.Title</h4>
+                                <span class="popular-interaction">
+                                    <i class="bi bi-people-fill"></i>
+                                    @announcement.commentCount
+                                </span>
+                            </div>
+                            <div class="popular-user">
+                                <img src="@(string.IsNullOrEmpty(announcement.UserImage) ? 
+                                          Url.Content("~/KampüsSepetiFrontend/default.jpg") : 
+                                          $"http://localhost:5000{announcement.UserImage}")"
+                                     alt="User" 
+                                     class="popular-user-image"
+                                     onerror="this.src='@Url.Content("~/KampüsSepetiFrontend/default.jpg")'">
+                                <span class="popular-username">@announcement.UserName</span>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="scroll-top">
+    <i class="bi bi-arrow-up"></i>
+</button>

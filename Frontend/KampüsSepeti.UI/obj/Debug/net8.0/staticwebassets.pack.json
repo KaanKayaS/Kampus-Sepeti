@@ -1,0 +1,525 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\KampüsSepeti.UI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\KampüsSepeti.UI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\announcement.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\announcement.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\announcement.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\announcement.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\announcement.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\announcement.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\announcementdetail.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\announcementdetail.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\announcementdetail.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\announcementdetail.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\createannouncement.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\createannouncement.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\createannouncement.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\createannouncement.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\createpost.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\createpost.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\createpost.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\createpost.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\default.jpg",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\default.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\dodge-charger-daytona-srt.jpg",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\dodge-charger-daytona-srt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\editannouncement.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\editannouncement.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\editpost.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\editpost.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\graduation-bg.jpg",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\graduation-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\graduation-cap.png",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\graduation-cap.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\index.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\index.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\index.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\index.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\k-logo.png",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\k-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\kaan.jpeg",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\kaan.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\kampüslogo.png",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\kampüslogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\kep.png",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\kep.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\login.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\login.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\login.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\mezuniyet.jpg",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\mezuniyet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\mezuniyet2.jpg",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\mezuniyet2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\myannouncement.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\myannouncement.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\myfavorite.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\myfavorite.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\myfavorite.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\myfavorite.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\myfavorite.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\myfavorite.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\mypost.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\mypost.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\myposts.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\myposts.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\myposts.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\myposts.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\myposts.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\myposts.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\postdetail.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\postdetail.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\postdetail.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\postdetail.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\postdetail.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\postdetail.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\profile.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\profile.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\profile.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\profile.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\profile.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\profile.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\register.css",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\register.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\register.html",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\register.html"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\KampüsSepetiFrontend\\register.js",
+      "PackagePath": "staticwebassets\\KampüsSepetiFrontend\\register.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\images\\campus-life.svg",
+      "PackagePath": "staticwebassets\\images\\campus-life.svg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\lib\\microsoft\\signalr\\signalr.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\signalr.js"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250208180332_448caede-9d87-4bf0-81fc-9e530abb1d41.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\20250208180332_448caede-9d87-4bf0-81fc-9e530abb1d41.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250208181307_dcdae2d6-06e9-41c3-a3f3-c902f39eff92.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250208181307_dcdae2d6-06e9-41c3-a3f3-c902f39eff92.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250209001304_a9b8a08e-2bd7-4f9d-bc6e-46ef6121fe9d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250209001304_a9b8a08e-2bd7-4f9d-bc6e-46ef6121fe9d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250421143910_a28b0ad5-cf20-4d77-80ed-1c1c1dbb4bf3.png",
+      "PackagePath": "staticwebassets\\uploads\\20250421143910_a28b0ad5-cf20-4d77-80ed-1c1c1dbb4bf3.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250421210338_94f5ad43-8e5a-4833-a59b-0bd6820450e8.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\20250421210338_94f5ad43-8e5a-4833-a59b-0bd6820450e8.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250421212453_40c16eaa-8865-4061-aa5c-f0cc5b585624.png",
+      "PackagePath": "staticwebassets\\uploads\\20250421212453_40c16eaa-8865-4061-aa5c-f0cc5b585624.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250421212520_a89813f8-8789-4b42-a915-aa8bfe28ba70.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\20250421212520_a89813f8-8789-4b42-a915-aa8bfe28ba70.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250422161118_3f4dee8a-0bc1-4939-b40d-4b38f8d46211.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\20250422161118_3f4dee8a-0bc1-4939-b40d-4b38f8d46211.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250422161631_20817e54-80b5-4988-a5f1-14422f106545.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250422161631_20817e54-80b5-4988-a5f1-14422f106545.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250422161853_63ee0dbf-79f2-46b6-a4cf-2c056f35184d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250422161853_63ee0dbf-79f2-46b6-a4cf-2c056f35184d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250422212554_86f98d97-dec3-42cc-8e58-0ec695ad880c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250422212554_86f98d97-dec3-42cc-8e58-0ec695ad880c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250423205006_85fefec0-2ec2-40c1-8b04-16d2fd8a9cf4.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\20250423205006_85fefec0-2ec2-40c1-8b04-16d2fd8a9cf4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250512140242_5589739b-2ec4-42e0-9d25-7dfea6f9b059.png",
+      "PackagePath": "staticwebassets\\uploads\\20250512140242_5589739b-2ec4-42e0-9d25-7dfea6f9b059.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250602143052_5c3ca1ec-fde7-4f15-96a0-ef9d442ded52.png",
+      "PackagePath": "staticwebassets\\uploads\\20250602143052_5c3ca1ec-fde7-4f15-96a0-ef9d442ded52.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250602143151_ce01a063-26d6-48c1-9790-10cfa0b09ad5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250602143151_ce01a063-26d6-48c1-9790-10cfa0b09ad5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250602143258_8d3d4c87-9878-4b9a-8388-f73c85b27df7.png",
+      "PackagePath": "staticwebassets\\uploads\\20250602143258_8d3d4c87-9878-4b9a-8388-f73c85b27df7.png"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250602143421_86b1ffe8-a8d3-4fa0-9ae3-96e0440803fe.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250602143421_86b1ffe8-a8d3-4fa0-9ae3-96e0440803fe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\20250602143512_d4e42ab3-4179-4fd4-ad57-531f1225463b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250602143512_d4e42ab3-4179-4fd4-ad57-531f1225463b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kaan Kaya\\source\\repos\\KampüsSepeti\\Frontend\\KampüsSepeti.UI\\wwwroot\\uploads\\default.jpg",
+      "PackagePath": "staticwebassets\\uploads\\default.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.KampüsSepeti.UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.KampüsSepeti.UI.props",
+      "PackagePath": "build\\KampüsSepeti.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.KampüsSepeti.UI.props",
+      "PackagePath": "buildMultiTargeting\\KampüsSepeti.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.KampüsSepeti.UI.props",
+      "PackagePath": "buildTransitive\\KampüsSepeti.UI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

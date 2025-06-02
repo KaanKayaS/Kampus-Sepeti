@@ -1,0 +1,115 @@
+@model List<AnnouncementDTO>
+@{
+    ViewData["Title"] = "Duyurularım";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/KampüsSepetiFrontend/myannouncement.css">
+
+<main class="my-posts-container">
+    <div class="content-wrapper">
+        <h1>Duyurularım</h1>
+
+        @if (Model != null && Model.Any())
+        {
+            <div class="posts-grid">
+                @foreach (var announcement in Model)
+                {
+                    <div class="post-card">
+                        <div class="post-header">
+                            <a href="@Url.Action("Detail", "Announcement", new { id = announcement.Id })" class="announcement-title" style="text-decoration: none;">@announcement.Title</a>
+                            <span class="location">
+                                <i class="bi bi-geo-alt"></i>
+                                @announcement.LocationName
+                            </span>
+                        </div>
+
+                        <div class="post-info">
+                            <span class="date">
+                                <i class="bi bi-calendar"></i>
+                                @announcement.CreatedDate.ToString("dd.MM.yyyy")
+                            </span>
+                            <span class="comments">
+                                <i class="bi bi-chat"></i>
+                                @announcement.CommentCount Yorum
+                            </span>
+                        </div>
+
+                        <div class="post-actions">
+                            <a href="@Url.Action("Edit", "MyAnnouncement", new { id = announcement.Id })" class="edit-btn" style="text-decoration: none;">
+                                <i class="bi bi-pencil"></i>
+                                Duyuruyu Düzenle
+                            </a>
+
+                            <button class="delete-btn" onclick="deleteAnnouncement(@announcement.Id)">
+                                <i class="bi bi-trash"></i>
+                                Duyuruyu Kaldır
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                @if (ViewBag.HasPreviousPage)
+                {
+                    <a href="/MyAnnouncement/Index?page=@(ViewBag.CurrentPage - 1)" class="page-link prev">
+                        <i class="bi bi-chevron-left"></i> Önceki
+                    </a>
+                }
+
+                <span class="page-info">
+                    Sayfa @ViewBag.CurrentPage / @ViewBag.TotalPages
+                </span>
+
+                @if (ViewBag.HasNextPage)
+                {
+                    <a href="/MyAnnouncement/Index?page=@(ViewBag.CurrentPage + 1)" class="page-link next">
+                        Sonraki <i class="bi bi-chevron-right"></i>
+                    </a>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="no-posts">
+                <i class="bi bi-megaphone"></i>
+                <h3>Henüz Duyurunuz Bulunmamaktadır</h3>
+                <p>Hemen yeni bir duyuru oluşturun!</p>
+                <a href="/Announcement/Create" class="create-post-btn">
+                    <i class="bi bi-plus-lg"></i>
+                    Duyuru Oluştur
+                </a>
+            </div>
+        }
+    </div>
+</main>
+
+
+@section Scripts {
+    <script>
+        function deleteAnnouncement(id) {
+            if (confirm('Bu duyuruyu silmek istediğinizden emin misiniz?')) {
+                fetch(`http://localhost:5000/api/Announcement?id=${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Duyuru başarıyla silindi!');
+                        window.location.reload();
+                    } else {
+                        alert('Duyuru silinirken bir hata oluştu!');
+                    }
+                })
+                .catch(error => {
+                    console.error('Hata:', error);
+                    alert('Bir hata oluştu!');
+                });
+            }
+        }
+    </script>
+} 

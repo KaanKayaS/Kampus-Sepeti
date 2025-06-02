@@ -1,0 +1,15 @@
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\bin\Debug\net8.0\KampüsSepeti.Application.deps.json
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\bin\Debug\net8.0\KampüsSepeti.Application.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\bin\Debug\net8.0\KampüsSepeti.Application.pdb
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.AssemblyInfoInputs.cache
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.AssemblyInfo.cs
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.csproj.CoreCompileInputs.cache
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\refint\KampüsSepeti.Application.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.pdb
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\ref\KampüsSepeti.Application.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\bin\Debug\net8.0\KampüsSepeti.Domain.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\bin\Debug\net8.0\KampüsSepeti.Domain.pdb
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.csproj.AssemblyReference.cache
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Core\KampüsSepeti.Application\obj\Debug\net8.0\KampüsSepeti.Application.csproj.CopyComplete

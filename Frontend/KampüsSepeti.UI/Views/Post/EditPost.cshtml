@@ -1,0 +1,118 @@
+@model PostDetailDTO
+@{
+    ViewData["Title"] = "İlan Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/KampüsSepetiFrontend/createpost.css">
+
+<div class="container">
+    <div class="create-post-box">
+        <h2>İlan Düzenle</h2>
+        
+        <form id="editPostForm" method="post">
+            <input type="hidden" id="id" name="id" value="@Model.Id" />
+            <input type="hidden" name="userId" value="@Model.UserId" />
+            
+            <div class="form-group">
+                <label for="title">İlan Başlığı</label>
+                <input type="text" id="title" name="title" value="@Model.Title" required>
+                <span class="text-danger field-validation-error" id="titleError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="image">İlan Görseli</label>
+                <div class="image-upload-container">
+                    <input type="file" id="image" name="image" accept="image/*">
+                    <div class="preview-container">
+                        <img id="imagePreview" src="@Model.Image" alt="Görsel Önizleme">
+                    </div>
+                </div>
+                <span class="text-danger field-validation-error" id="imageError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">İlan Açıklaması</label>
+                <textarea id="description" name="description" rows="4" required>@Model.Description</textarea>
+                <span class="text-danger field-validation-error" id="descriptionError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="brandName">Marka</label>
+                <input type="text" id="brandName" name="brandName" value="@Model.BrandName" required>
+                <span class="text-danger field-validation-error" id="brandNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Fiyat</label>
+                <div class="price-input">
+                    <input type="number" id="price" name="price" min="0" step="0.01" value="@Model.Price" required>
+                    <span class="currency">₺</span>
+                </div>
+                <span class="text-danger field-validation-error" id="priceError"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="locationId">Konum</label>
+                    <select id="locationId" name="locationId" required>
+                        <option value="">Konum Seçin</option>
+                        @if (ViewBag.Locations != null)
+                        {
+                            foreach (var location in ViewBag.Locations)
+                            {
+                                <option value="@location.Id" selected="@(Model.LocationId == location.Id)">
+                                    @location.Name
+                                </option>
+                            }
+                        }
+                    </select>
+                    <span class="text-danger field-validation-error" id="locationIdError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="statusId">Durum</label>
+                    <select id="statusId" name="statusId" required>
+                        <option value="">Durum Seçin</option>
+                        @if (ViewBag.Statuses != null)
+                        {
+                            foreach (var status in ViewBag.Statuses)
+                            {
+                                <option value="@status.Id" selected="@(Model.StatusId == status.Id)">
+                                    @status.Name
+                                </option>
+                            }
+                        }
+                    </select>
+                    <span class="text-danger field-validation-error" id="statusIdError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoryId">Kategori</label>
+                    <select id="categoryId" name="categoryId" required>
+                        <option value="">Kategori Seçin</option>
+                        @if (ViewBag.Categories != null)
+                        {
+                            foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.Id" selected="@(Model.CategoryId == category.Id)">
+                                    @category.Name
+                                </option>
+                            }
+                        }
+                    </select>
+                    <span class="text-danger field-validation-error" id="categoryIdError"></span>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn">Değişiklikleri Kaydet</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='/MyPosts/Index'">İptal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/KampüsSepetiFrontend/editpost.js"></script>
+} 

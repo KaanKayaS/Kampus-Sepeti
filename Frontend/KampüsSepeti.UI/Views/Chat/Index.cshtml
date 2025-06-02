@@ -1,0 +1,375 @@
+﻿@{
+    ViewData["Title"] = "Chat";
+    Layout = "~/Views/Default/Index.cshtml";
+}
+
+<div class="chat-center-wrapper">
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <div class="chat-header">
+                <h3>Kullanıcılar</h3>
+            </div>
+            <div class="chat-users" id="userList">
+                <!-- Kullanıcı listesi buraya gelecek -->
+            </div>
+        </div>
+        <div class="chat-main">
+            <div class="chat-header">
+                <h3 id="currentChat">Genel Sohbet</h3>
+            </div>
+            <div class="chat-messages" id="messageList">
+                <!-- Mesajlar buraya gelecek -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Mesajınızı yazın...">
+                <button id="sendButton">Gönder</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: #f2f2f2;
+    }
+    .chat-center-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+    .chat-container {
+        display: flex;
+        width: 600px;
+        height: 500px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .chat-sidebar {
+        width: 180px;
+        background-color: #f5f5f5;
+        border-right: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+    }
+    .chat-header {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+    .chat-users {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .user-item {
+        padding: 8px;
+        margin-bottom: 6px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        cursor: pointer;
+        transition: background-color 0.2s;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+    .user-item:hover, .user-item.selected {
+        background-color: #e3f2fd;
+    }
+    .user-item i {
+        margin-right: 8px;
+    }
+    .chat-main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+    }
+    .message {
+        margin-bottom: 10px;
+        padding: 8px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    .message.private {
+        background-color: #e3f2fd;
+        border-left: 3px solid #2196f3;
+    }
+    .chat-input {
+        padding: 12px;
+        border-top: 1px solid #ddd;
+        display: flex;
+        gap: 8px;
+    }
+    .chat-input input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    .chat-input button {
+        padding: 8px 18px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .chat-input button:hover {
+        background-color: #0056b3;
+    }
+    .online-dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+    .online-dot.online {
+        background: #4caf50 !important; /* Yeşil */
+    }
+    .online-dot.offline {
+        background: #f44336 !important; /* Kırmızı */
+    }
+    .message.left {
+        background-color: #e3f2fd;
+        margin-right: auto;
+        border-top-left-radius: 0;
+        text-align: left;
+    }
+    .message.right {
+        background-color: #dcf8c6;
+        margin-left: auto;
+        border-top-right-radius: 0;
+        text-align: right;
+    }
+    .chat-input input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        min-width: 0;
+    }
+    .chat-input button {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+</style>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.0/signalr.min.js"></script>
+    <script>
+        const currentUser = '@User.Claims.FirstOrDefault(c => c.Type == "email")?.Value';
+        let currentChatUser = "general";
+        let currentChatConnectionId = null;
+        const privateMessages = {};
+        const generalMessages = [];
+        const userConnectionIds = {};
+        let allUsersFromApi = [];
+        let onlineUserEmails = [];
+        let apiLoaded = false;
+
+        // Kullanıcı listesi güncelle (API + SignalR online)
+        function renderUserList() {
+            if (!apiLoaded) return;
+            const userList = document.getElementById("userList");
+            userList.innerHTML = `
+                <div class="user-item" onclick="selectChat('general')">
+                    <i class="bi bi-people"></i>
+                    Genel Sohbet
+                </div>
+            `;
+            allUsersFromApi.forEach(u => {
+                if (u.email.toLowerCase() !== currentUser.toLowerCase()) {
+                    const isOnline = onlineUserEmails.map(e => e.toLowerCase()).includes(u.email.toLowerCase());
+                    userList.innerHTML += `
+                        <div class="user-item" onclick="selectChat('${u.email}')">
+                            <span class="online-dot ${isOnline ? 'online' : 'offline'}"></span>
+                            <i class="bi bi-person"></i>
+                            ${u.fullName || u.email}
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        // SignalR'dan online user listesi gelince güncelle
+        function updateOnlineUserList(signalrUsers) {
+            console.log("SignalR'dan gelen kullanıcı listesi:", signalrUsers);
+            // Gelen users array'i sadece online olanların email'lerini içeriyor olabilir
+            // Eğer obje ise: [{user: 'mail', online: true}]
+            if (Array.isArray(signalrUsers) && signalrUsers.length > 0 && typeof signalrUsers[0] === 'object' && 'user' in signalrUsers[0]) {
+                onlineUserEmails = signalrUsers.filter(u => u.online).map(u => u.user);
+            } else {
+                // Sadece string array ise
+                onlineUserEmails = signalrUsers;
+            }
+            renderUserList();
+        }
+
+        // API'den tüm kullanıcıları çek
+        async function fetchAllUsers() {
+            try {
+                const res = await fetch('http://localhost:5000/api/Users/GetAllUsers');
+                if (res.ok) {
+                    allUsersFromApi = await res.json();
+                    console.log("API'den gelen kullanıcılar:", allUsersFromApi);
+                    apiLoaded = true;
+                    renderUserList();
+                }
+            } catch (e) { console.error(e); }
+        }
+
+        // Mesajları göster
+        function renderMessages() {
+            const messageList = document.getElementById("messageList");
+            messageList.innerHTML = "";
+            if (currentChatUser === "general") {
+                generalMessages.forEach(msg => {
+                    const messageDiv = document.createElement("div");
+                    messageDiv.className = "message left";
+                    messageDiv.innerHTML = `<strong>${msg.user}:</strong> ${msg.message}`;
+                    messageList.appendChild(messageDiv);
+                });
+            } else if (privateMessages[currentChatUser]) {
+                privateMessages[currentChatUser].forEach(msg => {
+                    const messageDiv = document.createElement("div");
+                    messageDiv.className = msg.from === currentUser ? "message left" : "message right";
+                    messageDiv.innerHTML = `<strong>${msg.from}:</strong> ${msg.message}`;
+                    messageList.appendChild(messageDiv);
+                });
+            }
+            messageList.scrollTop = messageList.scrollHeight;
+        }
+
+        // Chat seçimi
+        async function selectChat(userId) {
+            currentChatUser = userId;
+            currentChatConnectionId = userConnectionIds[userId];
+            document.getElementById("currentChat").textContent = userId === "general" ? "Genel Sohbet" : userId;
+            if (userId !== "general") {
+                // Geçmişi yükle
+                try {
+                    const res = await fetch(`/api/ChatHistory/history?user1=${encodeURIComponent(currentUser)}&user2=${encodeURIComponent(userId)}`);
+                    if (res.ok) {
+                        const history = await res.json();
+                        privateMessages[userId] = history;
+                    }
+                } catch (e) { console.error(e); }
+            }
+            renderMessages();
+        }
+
+        // SignalR bağlantısı
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .withAutomaticReconnect()
+            .build();
+
+        connection.start()
+            .then(() => {
+                connection.invoke("GetUserList");
+            })
+            .catch(err => console.error("SignalR Connection Error: ", err));
+
+        connection.on("UpdateUserList", (users) => {
+            updateOnlineUserList(users);
+        });
+
+        connection.on("UpdateUserConnectionIds", (userConnectionMap) => {
+            userConnectionIds = userConnectionMap;
+        });
+
+        connection.on("ReceiveMessage", (user, message) => {
+            generalMessages.push({ user, message });
+            if (currentChatUser === "general") renderMessages();
+        });
+
+        connection.on("ReceivePrivateMessage", (fromUser, message) => {
+            // Sohbet anahtarı: karşıdaki kullanıcı
+            const chatKey = fromUser === currentUser ? currentChatUser : fromUser;
+            if (!privateMessages[chatKey]) privateMessages[chatKey] = [];
+            privateMessages[chatKey].push({ from: fromUser, message });
+
+            // Eğer aktif sohbetse göster
+            if (currentChatUser === chatKey) renderMessages();
+        });
+
+        // Mesaj gönderme
+        document.getElementById("sendButton").addEventListener("click", async () => {
+            const messageInput = document.getElementById("messageInput");
+            const message = messageInput.value;
+            if (message) {
+                try {
+                    if (currentChatUser === "general") {
+                        await connection.invoke("SendMessage", currentUser, message);
+                    } else {
+                        console.log("SendPrivateMessage to:", currentChatUser, "connectionId:", currentChatConnectionId, "from:", currentUser, "message:", message);
+                        await connection.invoke("SendPrivateMessage", currentChatUser, currentChatConnectionId, message);
+                    }
+                    messageInput.value = "";
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+        });
+
+        document.getElementById("messageInput").addEventListener("keypress", async (e) => {
+            if (e.key === "Enter") {
+                const messageInput = document.getElementById("messageInput");
+                const message = messageInput.value;
+                if (message) {
+                    try {
+                        if (currentChatUser === "general") {
+                            await connection.invoke("SendMessage", currentUser, message);
+                        } else {
+                            console.log("SendPrivateMessage to:", currentChatUser, "connectionId:", currentChatConnectionId, "from:", currentUser, "message:", message);
+                            await connection.invoke("SendPrivateMessage", currentChatUser, currentChatConnectionId, message);
+                        }
+                        messageInput.value = "";
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+            }
+        });
+
+        // LocalStorage'dan canlı mesajları dinle ve ekrana yansıt
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'livePrivateMessages' && currentChatUser !== 'general') {
+                try {
+                    const allChats = JSON.parse(localStorage.getItem('livePrivateMessages') || '{}');
+                    if (allChats[currentChatUser]) {
+                        privateMessages[currentChatUser] = allChats[currentChatUser];
+                        renderMessages();
+                    }
+                } catch {}
+            }
+        });
+
+        // Custom event ile gelen canlı mesajı anında ekrana yansıt
+        window.addEventListener('livePrivateMessage', function(e) {
+            const { chatKey, fromUser, message } = e.detail;
+            if (!privateMessages[chatKey]) privateMessages[chatKey] = [];
+            privateMessages[chatKey].push({ from: fromUser, message });
+            if (currentChatUser === chatKey) renderMessages();
+        });
+
+        // Sayfa yüklendiğinde API'den tüm kullanıcıları çek
+        fetchAllUsers();
+    </script>
+}
+

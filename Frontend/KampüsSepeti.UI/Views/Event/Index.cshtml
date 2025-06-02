@@ -1,0 +1,165 @@
+﻿@model KampüsSepeti.DTO.EventFilterViewModel
+@{
+    ViewData["Title"] = "Etkinlikler";
+    Layout = "~/Views/Default/Index.cshtml";
+}
+
+<div class="container custom-mt">
+    <div class="row">
+        <!-- Filtreleme Formu -->
+        <div class="col-md-3">
+            <div class="filter-wrapper" style="margin-top: 2.5rem;">
+                <div class="card shadow-sm mb-4 filter-card">
+                    <div class="card-header filter-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-filter me-2"></i>Filtrele
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="get" action="@Url.Action("Index")">
+                            <div class="mb-3">
+                                <label for="searchTerm" class="form-label">
+                                    <i class="fas fa-search me-2"></i>Etkinlik Adı
+                                </label>
+                                <input type="text" class="form-control" id="searchTerm" name="searchTerm" value="@Model.SearchTerm" placeholder="Etkinlik ara...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cityId" class="form-label">
+                                    <i class="fas fa-city me-2"></i>Şehir
+                                </label>
+                                <select class="form-select" id="cityId" name="cityId">
+                                    <option value="">Tüm Şehirler</option>
+                                    @foreach (var city in Model.Cities)
+                                    {
+                                        <option value="@city.Id" selected="@(Model.SelectedCityId.HasValue && Model.SelectedCityId.Value == city.Id)">@city.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="categoryId" class="form-label">
+                                    <i class="fas fa-theater-masks me-2"></i>Kategori
+                                </label>
+                                <select class="form-select" id="categoryId" name="categoryId">
+                                    <option value="">Tüm Kategoriler</option>
+                                    @foreach (var category in Model.Categories)
+                                    {
+                                        <option value="@category.Id" selected="@(Model.SelectedCategoryId.HasValue && Model.SelectedCategoryId.Value == category.Id)">@category.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <button type="submit" class="btn filter-btn w-100">
+                                <i class="fas fa-filter me-2"></i>Filtrele
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etkinlik Kartları -->
+        <div class="col-md-9">
+            <h2 class="mb-4 etkinlikler-baslik">
+                <i class="fas fa-calendar-alt me-2"></i>Etkinlikler
+            </h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var etkinlik in Model.Events)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@etkinlik.PosterUrl" class="card-img-top" alt="@etkinlik.Name" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title text-truncate" title="@etkinlik.Name">@etkinlik.Name</h5>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar"></i> @etkinlik.Start.ToString("dd MMMM yyyy HH:mm")
+                                    </small>
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <i class="fas fa-map-marker-alt"></i> @etkinlik.Venue?.Name
+                                    </small>
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <i class="fas fa-tag"></i> @etkinlik.Category?.Name
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <a href="@etkinlik.Url" class="btn etkinlik-btn w-100" target="_blank">
+                                    <i class="fas fa-external-link-alt me-2"></i>Detaylar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        body {
+            background: #f7f7fb;
+        }
+        .custom-mt {
+            margin-top: 3.5rem !important;
+        }
+        .filter-card {
+            border-radius: 18px;
+            background: #fff;
+        }
+        .filter-header {
+            background: #6C2EB5 !important;
+            color: #fff !important;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+        }
+        .filter-btn {
+            background: #6C2EB5;
+            color: #fff;
+            border-radius: 8px;
+            border: none;
+        }
+        .filter-btn:hover {
+            background: #4b1e7a;
+            color: #fff;
+        }
+        .etkinlikler-baslik {
+            color: #6C2EB5;
+            margin-top: 2.5rem;
+            font-weight: bold;
+        }
+        .card {
+            transition: transform 0.2s;
+            border: none;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .text-truncate {
+            max-width: 100%;
+        }
+        .card-header {
+            border-bottom: none;
+        }
+        .form-control, .form-select {
+            border-radius: 8px;
+        }
+        .btn {
+            border-radius: 8px;
+        }
+        .etkinlik-btn {
+            background: #6C2EB5;
+            color: #fff;
+            border: none;
+        }
+        .etkinlik-btn:hover {
+            background: #4b1e7a;
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+}
+

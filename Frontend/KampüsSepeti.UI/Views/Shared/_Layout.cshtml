@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - KampüsSepeti</title>
+    <link rel="stylesheet" href="~/KampüsSepetiFrontend/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    @await Component.InvokeAsync("_NavbarDefaultComponentPartial")
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed by <span class="designer">Kaan Kaya</span> © 2025</p>
+        </div>
+    </footer>
+
+    <script src="~/KampüsSepetiFrontend/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.0/signalr.min.js"></script>
+    <script>
+        // Global SignalR connection for online user tracking
+        (function() {
+            const currentUser = '@User.Claims.FirstOrDefault(c => c.Type == "email")?.Value';
+            if (currentUser) {
+                window.globalSignalRConnection = new signalR.HubConnectionBuilder()
+                    .withUrl("/chatHub")
+                    .withAutomaticReconnect()
+                    .build();
+                window.globalSignalRConnection.start()
+                    .catch(err => console.error("Global SignalR Connection Error: ", err));
+            }
+        })();
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿@model KampüsSepeti.Application.Features.Commands.PostCommands.CreatePostCommand
+@{
+    ViewData["Title"] = "İlan Oluştur";
+    Layout = "~/Views/Default/Index.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/KampüsSepetiFrontend/createpost.css">
+</head>
+
+<div class="container">
+    <div class="create-post-box">
+        <h2>Yeni İlan Oluştur</h2>
+        
+        <form id="createPostForm" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">İlan Başlığı</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="image">İlan Görseli</label>
+                <div class="image-upload-container">
+                    <input type="file" id="image" name="image" accept="image/*">
+                    <div class="preview-container">
+                        <img id="imagePreview" src="#" alt="Görsel Önizleme" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">İlan Açıklaması</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="brandName">Marka</label>
+                <input type="text" id="brandName" name="brandName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Fiyat</label>
+                <div class="price-input">
+                    <input type="number" id="price" name="price" min="0" step="0.01" required>
+                    <span class="currency">₺</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="locationId">Konum</label>
+                    <select id="locationId" name="locationId" required>
+                        <option value="">Konum Seçin</option>
+                        @if (ViewBag.Locations != null)
+                        {
+                            foreach (var location in ViewBag.Locations)
+                            {
+                                <option value="@location.Id">@location.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="statusId">Durum</label>
+                    <select id="statusId" name="statusId" required>
+                        <option value="">Durum Seçin</option>
+                        @if (ViewBag.Statuses != null)
+                        {
+                            foreach (var status in (List<StatusDto>)ViewBag.Statuses)
+                            {
+                                <option value="@(status?.Id ?? 0)">@(status?.Name ?? "Bilinmeyen")</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoryId">Kategori</label>
+                    <select id="categoryId" name="categoryId" required>
+                        <option value="">Kategori Seçin</option>
+                        @if (ViewBag.Categories != null)
+                        {
+                            foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn">İlanı Yayınla</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='@Url.Action("Index", "Main")'">İptal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/KampüsSepetiFrontend/createpost.js"></script>
+

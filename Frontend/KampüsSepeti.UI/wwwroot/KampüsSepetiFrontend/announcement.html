@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="announcement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="k-logo.png" alt="Logo">
+            </a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lokasyon 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="citySearch" placeholder="Şehir ara...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="cities-list">
+                        <a href="#" data-city="istanbul"><i class="fas fa-city"></i> İstanbul</a>
+                        <a href="#" data-city="ankara"><i class="fas fa-city"></i> Ankara</a>
+                        <a href="#" data-city="izmir"><i class="fas fa-city"></i> İzmir</a>
+                        <a href="#" data-city="bursa"><i class="fas fa-city"></i> Bursa</a>
+                        <a href="#" data-city="antalya"><i class="fas fa-city"></i> Antalya</a>
+                        <a href="#" data-city="adana"><i class="fas fa-city"></i> Adana</a>
+                        <a href="#" class="all-cities" data-city="all"><i class="fas fa-globe"></i> Tüm Şehirler</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="index.html">İlanlar</a>
+            <a href="#etkinlikler">Etkinlikler</a>
+            <a href="announcement.html" class="active">Duyurular</a>
+        </div>
+        <div class="nav-right">
+            <!-- Auth Buttons -->
+            <a href="login.html" class="auth-btn">Giriş Yap</a>
+            <a href="register.html" class="auth-btn">Kayıt Ol</a>
+            
+            <!-- Bildirimler -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            
+            <!-- Mesajlar -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-envelope"></i>
+                <span class="notification-badge">2</span>
+            </div>
+            
+            <!-- Duyuru Oluştur -->
+            <a href="create-listing.html" class="create-listing-btn">
+                <i class="bi bi-megaphone"></i>
+                Duyuru Oluştur
+            </a>
+            
+            <!-- Profil Dropdown -->
+            <div class="profile-dropdown">
+                <div class="profile-trigger">
+                    <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="profile-menu">
+                    <div class="profile-header">
+                        <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                        <div class="profile-info">
+                            <span class="profile-name">Kaan Kaya</span>
+                            <span class="profile-email"><strong>0</strong> Takip <strong>0</strong> Takipçi</span>
+                        </div>
+                    </div>
+                    <div class="profile-links">
+                        <a href="myposts.html" class="profile-link">
+                            <i class="bi bi-card-list"></i>
+                            İlanlarım
+                        </a>
+                        <a href="myfavorite.html" class="profile-link">
+                            <i class="bi bi-heart"></i>
+                            Favorilerim
+                        </a>
+                        <a href="#" class="profile-link">
+                            <i class="bi bi-gear"></i>
+                            Ayarlar
+                        </a>
+                    </div>
+                    <div class="profile-footer">
+                        <a href="#" class="logout-btn">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Çıkış Yap
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="announcement-table">
+                <div class="table-header">
+                    <div class="header-cell">Başlık</div>
+                    <div class="header-cell">Kullanıcı</div>
+                    <div class="header-cell">Lokasyon</div>
+                    <div class="header-cell">Etkileşim</div>
+                </div>
+                
+                <div class="table-content" id="page1">
+                    <!-- 1. Duyuru -->
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Derslik Değişikliği Duyurusu</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/50" alt="User" class="user-image">
+                            <span class="username">Kaan06</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Antalya</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>25</span>
+                        </div>
+                    </a>
+
+                    <!-- 2. Duyuru -->
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Final Sınavı Tarihi Değişikliği</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/51" alt="User" class="user-image">
+                            <span class="username">Prof_Ahmet</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>İstanbul</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>156</span>
+                        </div>
+                    </a>
+
+                    <!-- 3. Duyuru -->
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="table-row">
+                        <div class="cell title-cell">Öğrenci Kulüpleri Başvuruları</div>
+                        <div class="cell user-cell">
+                            <img src="https://picsum.photos/52" alt="User" class="user-image">
+                            <span class="username">KulupKoord</span>
+                        </div>
+                        <div class="cell location-cell">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Ankara</span>
+                        </div>
+                        <div class="cell interaction-cell">
+                            <i class="bi bi-people-fill"></i>
+                            <span>89</span>
+                        </div>
+                    </a>   
+
+                    <!-- Diğer 7 duyuruyu da benzer şekilde ekleyin -->
+                </div>
+
+                <!-- Sayfa 2 için -->
+                <div class="table-content" id="page2" style="display: none;">
+                    <!-- Benzer şekilde 10 duyuru daha -->
+                </div>
+
+                <!-- Sayfa 3 için -->
+                <div class="table-content" id="page3" style="display: none;">
+                    <!-- Benzer şekilde 10 duyuru daha -->
+                </div>
+
+                <!-- Sayfalama -->
+                <div class="pagination">
+                    <button class="pagination-btn prev-btn" disabled>
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="page-numbers">
+                        <button class="pagination-btn page-btn active">1</button>
+                        <button class="pagination-btn page-btn">2</button>
+                        <button class="pagination-btn page-btn">3</button>
+                    </div>
+                    <button class="pagination-btn next-btn">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Popüler Duyurular -->
+            <div class="popular-announcements">
+                <h3 class="popular-title">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    Popüler Duyurular
+                </h3>
+                <div class="popular-list">
+                    <!-- Popüler Duyuru 1 -->
+                    <div class="popular-item">
+                        <div class="popular-header">
+                            <h4>Final Sınavı Tarihi Değişikliği</h4>
+                            <span class="popular-interaction">
+                                <i class="bi bi-people-fill"></i>
+                                156
+                            </span>
+                        </div>
+                        <div class="popular-user">
+                            <img src="https://picsum.photos/51" alt="User" class="popular-user-image">
+                            <span class="popular-username">Prof_Ahmet</span>
+                        </div>
+                    </div>
+
+                    <!-- Popüler Duyuru 2 -->
+                    <div class="popular-item">
+                        <div class="popular-header">
+                            <h4>Öğrenci Kulüpleri Başvuruları</h4>
+                            <span class="popular-interaction">
+                                <i class="bi bi-people-fill"></i>
+                                89
+                            </span>
+                        </div>
+                        <div class="popular-user">
+                            <img src="https://picsum.photos/52" alt="User" class="popular-user-image">
+                            <span class="popular-username">KulupKoord</span>
+                        </div>
+                    </div>
+
+                    <!-- Popüler Duyuru 3 -->
+                    <div class="popular-item">
+                        <div class="popular-header">
+                            <h4>Derslik Değişikliği Duyurusu</h4>
+                            <span class="popular-interaction">
+                                <i class="bi bi-people-fill"></i>
+                                25
+                            </span>
+                        </div>
+                        <div class="popular-user">
+                            <img src="https://picsum.photos/50" alt="User" class="popular-user-image">
+                            <span class="popular-username">Kaan06</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="announcement.js"></script>
+    <button class="scroll-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+   
+</body>
+</html>

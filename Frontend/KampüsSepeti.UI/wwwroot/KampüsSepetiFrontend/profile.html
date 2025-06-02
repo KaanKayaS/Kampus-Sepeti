@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="k-logo.png" alt="Logo">
+            </a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lokasyon 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="citySearch" placeholder="Şehir ara...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="cities-list">
+                        <a href="#" data-city="istanbul"><i class="fas fa-city"></i> İstanbul</a>
+                        <a href="#" data-city="ankara"><i class="fas fa-city"></i> Ankara</a>
+                        <a href="#" data-city="izmir"><i class="fas fa-city"></i> İzmir</a>
+                        <a href="#" data-city="bursa"><i class="fas fa-city"></i> Bursa</a>
+                        <a href="#" data-city="antalya"><i class="fas fa-city"></i> Antalya</a>
+                        <a href="#" data-city="adana"><i class="fas fa-city"></i> Adana</a>
+                        <a href="#" class="all-cities" data-city="all"><i class="fas fa-globe"></i> Tüm Şehirler</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="index.html">İlanlar</a>
+            <a href="#etkinlikler">Etkinlikler</a>
+            <a href="announcement.html">Duyurular</a>
+        </div>
+        <div class="nav-right">
+            <!-- Auth Buttons -->
+            <a href="login.html" class="auth-btn">Giriş Yap</a>
+            <a href="register.html" class="auth-btn">Kayıt Ol</a>
+            
+            <!-- Bildirimler -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            
+            <!-- Mesajlar -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-envelope"></i>
+                <span class="notification-badge">2</span>
+            </div>
+            
+            <!-- İlan Oluştur -->
+            <a href="create-listing.html" class="create-listing-btn">
+                <i class="fas fa-plus"></i>
+                İlan Oluştur
+            </a>
+            
+            <!-- Profil Dropdown -->
+            <div class="profile-dropdown">
+                <div class="profile-trigger">
+                    <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="profile-menu">
+                    <div class="profile-header">
+                        <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                        <div class="profile-info">
+                            <span class="profile-name">Kaan Kaya</span>
+                            <span class="profile-email"><strong>0</strong> Takip <strong>0</strong> Takipçi</span>
+                        </div>
+                    </div>
+                    <div class="profile-links">
+                        <a href="myposts.html" class="profile-link">
+                            <i class="bi bi-card-list"></i>
+                            İlanlarım
+                        </a>
+                        <a href="myfavorite.html" class="profile-link">
+                            <i class="bi bi-heart"></i>
+                            Favorilerim
+                        </a>
+                        <a href="#" class="profile-link">
+                            <i class="bi bi-gear"></i>
+                            Ayarlar
+                        </a>
+                    </div>
+                    <div class="profile-footer">
+                        <a href="#" class="logout-btn">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Çıkış Yap
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="profile-container">
+        <!-- Kullanıcı Bilgileri Bölümü -->
+        <div class="user-profile-section">
+            <div class="user-info">
+                <div class="user-image-container">
+                    <img src="https://picsum.photos/200" alt="User Profile" class="user-image">
+                </div>
+                <div class="user-details">
+                    <h1 class="username">Ahmet Tekin</h1>
+                    <p class="member-since">Şub 2021 tarihinden beri üye</p>
+                    <div class="user-stats">
+                        <div class="stat">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Takip</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">0</span>
+                            <span class="stat-label">Takipçi</span>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <button class="follow-btn">
+                            <i class="bi bi-person-plus"></i>
+                            Takip Et
+                        </button>
+                        <button class="chat-btn">
+                            <i class="bi bi-chat"></i>
+                            Sohbet
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kullanıcının İlanları -->
+        <div class="user-listings-section">
+            <h2 class="section-title">İlanları</h2>
+            <div class="listings-grid">
+                <!-- İlan 1 -->
+                <a href="postdetail.html" class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Hot wheels dominic toretto set</h3>
+                        <div class="listing-details">
+                            <span class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                İstanbul, Kadıköy
+                            </span>
+                            <span class="price">1.000 TL</span>
+                        </div>
+                        <div class="listing-footer">
+                            <span class="date">2 GÜN ÖNCE</span>
+                            <span class="wishlist-count">
+                                <i class="bi bi-heart-fill"></i>
+                                5
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- İlan 2 -->
+                <a href="postdetail.html" class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://picsum.photos/400/300?random=2" alt="İlan Görseli">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Fast & Furious Hot Wheels Set</h3>
+                        <div class="listing-details">
+                            <span class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                İstanbul, Beyoğlu
+                            </span>
+                            <span class="price">1.000 TL</span>
+                        </div>
+                        <div class="listing-footer">
+                            <span class="date">2 GÜN ÖNCE</span>
+                            <span class="wishlist-count">
+                                <i class="bi bi-heart-fill"></i>
+                                2
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- İlan 3 -->
+                <a href="postdetail.html" class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://picsum.photos/400/300?random=3" alt="İlan Görseli">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Hot Wheels Premium Koleksiyon</h3>
+                        <div class="listing-details">
+                            <span class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                İstanbul, Üsküdar
+                            </span>
+                            <span class="price">1.500 TL</span>
+                        </div>
+                        <div class="listing-footer">
+                            <span class="date">3 GÜN ÖNCE</span>
+                            <span class="wishlist-count">
+                                <i class="bi bi-heart-fill"></i>
+                                3
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- İlan 4 -->
+                <a href="postdetail.html" class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://picsum.photos/400/300?random=4" alt="İlan Görseli">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Hot Wheels Özel Seri Araçlar</h3>
+                        <div class="listing-details">
+                            <span class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                İstanbul, Beşiktaş
+                            </span>
+                            <span class="price">800 TL</span>
+                        </div>
+                        <div class="listing-footer">
+                            <span class="date">4 GÜN ÖNCE</span>
+                            <span class="wishlist-count">
+                                <i class="bi bi-heart-fill"></i>
+                                1
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="postdetail.html" class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://picsum.photos/400/300?random=4" alt="İlan Görseli">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Hot Wheels Özel Seri Araçlar</h3>
+                        <div class="listing-details">
+                            <span class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                İstanbul, Beşiktaş
+                            </span>
+                            <span class="price">800 TL</span>
+                        </div>
+                        <div class="listing-footer">
+                            <span class="date">4 GÜN ÖNCE</span>
+                            <span class="wishlist-count">
+                                <i class="bi bi-heart-fill"></i>
+                                1
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <script src="profile.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed by <span class="designer">Kaan Kaya</span> © 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

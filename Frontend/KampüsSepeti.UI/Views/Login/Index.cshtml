@@ -1,0 +1,47 @@
+﻿@model LoginCommand
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KampüsSepeti - Giriş</title>
+    <link rel="stylesheet" href="~/KampüsSepetiFrontend/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="~/KampüsSepetiFrontend/k-logo.png" alt="KampüsSepeti Logo">
+            </div>
+            <h2>KampüsSepeti'ne Hoşgeldiniz</h2>
+            <div id="errorMessage" style="display:none; color: red; margin-bottom: 10px;"></div>
+            <form id="loginForm" method="post">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="validation-summary-errors text-danger">
+                        @Html.ValidationSummary(true)
+                    </div>
+                }
+                <div class="input-group">
+                    <input type="email" name="Email" id="email" required>
+                    <label>E-posta</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="Password" id="password" required>
+                    <label>Şifre</label>
+                </div>
+                <button type="submit" class="login-btn">Giriş Yap</button>
+                <div class="links">
+                    <a href="#">Şifremi Unuttum</a>
+                    <a href="/Register/Register">Hesap Oluştur</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="~/KampüsSepetiFrontend/login.js"></script>
+</body>
+</html>

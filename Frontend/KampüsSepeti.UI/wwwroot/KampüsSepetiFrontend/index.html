@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlanlar</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="k-logo.png" alt="Logo">
+            </a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lokasyon 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="citySearch" placeholder="Şehir ara...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="cities-list">
+                        <a href="#" data-city="istanbul"><i class="fas fa-city"></i> İstanbul</a>
+                        <a href="#" data-city="ankara"><i class="fas fa-city"></i> Ankara</a>
+                        <a href="#" data-city="izmir"><i class="fas fa-city"></i> İzmir</a>
+                        <a href="#" data-city="bursa"><i class="fas fa-city"></i> Bursa</a>
+                        <a href="#" data-city="antalya"><i class="fas fa-city"></i> Antalya</a>
+                        <a href="#" data-city="adana"><i class="fas fa-city"></i> Adana</a>
+                        <a href="#" class="all-cities" data-city="all"><i class="fas fa-globe"></i> Tüm Şehirler</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="#ilanlar" class="active">İlanlar</a>
+            <a href="#etkinlikler">Etkinlikler</a>
+            <a href="announcement.html">Duyurular</a>
+        </div>
+        <div class="nav-right">
+            <!-- Auth Buttons -->
+            <a href="login.html" class="auth-btn">Giriş Yap</a>
+            <a href="register.html" class="auth-btn">Kayıt Ol</a>
+            
+            <!-- Bildirimler -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            
+            <!-- Mesajlar -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-envelope"></i>
+                <span class="notification-badge">2</span>
+            </div>
+            
+            <!-- İlan Oluştur -->
+            <a href="create-listing.html" class="create-listing-btn">
+                <i class="fas fa-plus"></i>
+                İlan Oluştur
+            </a>
+            
+            <!-- Profil Dropdown -->
+            <div class="profile-dropdown">
+                <div class="profile-trigger">
+                    <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="profile-menu">
+                    <div class="profile-header">
+                        <img src="https://picsum.photos/32" alt="Profile" class="profile-image">
+                        <div class="profile-info">
+                            <span class="profile-name">Kaan Kaya</span>
+                            <span class="profile-email"><strong>0</strong> Takip <strong>0</strong> Takipçi</span>
+                        </div>
+                    </div>
+                    <div class="profile-links">
+                        <a href="myposts.html" class="profile-link">
+                            <i class="bi bi-card-list"></i>
+                            İlanlarım
+                        </a>
+                        <a href="myfavorite.html" class="profile-link">
+                            <i class="bi bi-heart"></i>
+                            Favorilerim
+                        </a>
+                        <a href="#" class="profile-link">
+                            <i class="bi bi-gear"></i>
+                            Ayarlar
+                        </a>
+                    </div>
+                    <div class="profile-footer">
+                        <a href="#" class="logout-btn">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Çıkış Yap
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Filtre Kutusu -->
+            <aside class="filter-sidebar">
+                <div class="filter-box">
+                    <h3 class="filter-title">Filtrele</h3>
+                    
+                    <!-- Arama Filtresi -->
+                    <div class="filter-section">
+                        <label>Arama</label>
+                        <div class="search-input">
+                            <input type="text" placeholder="İlan ara...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <!-- Fiyat Aralığı -->
+                    <div class="filter-section">
+                        <label>Fiyat Aralığı</label>
+                        <div class="price-inputs">
+                            <input type="number" placeholder="Min ₺">
+                            <span>-</span>
+                            <input type="number" placeholder="Max ₺">
+                        </div>
+                    </div>
+
+                    <!-- Kategori Seçimi -->
+                    <div class="filter-section">
+                        <label>Kategori</label>
+                        <select class="category-select">
+                            <option value="">Tüm Kategoriler</option>
+                            <option value="elektronik">Elektronik</option>
+                            <option value="giyim">Giyim</option>
+                            <option value="ev">Ev Eşyaları</option>
+                            <option value="spor">Spor</option>
+                            <option value="kitap">Kitap</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtre Butonları -->
+                    <div class="filter-buttons">
+                        <button class="apply-filter">Uygula</button>
+                        <button class="clear-filter">Temizle</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- İlanlar Bölümü -->
+            <section class="listings-section">
+                <h2 class="section-title">Güncel İlanlar</h2>
+                
+                <!-- Sayfa 1 (12 ilan) -->
+                <div class="listings-grid" id="page1">
+                    <!-- İlan 1 -->
+                    <a href="postdetail.html" class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn" onclick="event.stopPropagation()">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- İlan 2 -->
+                    <a href="postdetail.html" class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=8" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn" onclick="event.stopPropagation()">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- İlan 3 -->
+                    <a href="postdetail.html" class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=17" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn" onclick="event.stopPropagation()">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- İlan 4 -->
+                    <a href="postdetail.html" class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=19" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn" onclick="event.stopPropagation()">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=20" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=14" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- İlan 2 -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=2" alt="İlan Görseli">
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">iPhone 14 Pro</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Ankara, Çankaya
+                                </span>
+                                <span class="price">₺52,000</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 5 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- İlan 3-12 için benzer yapıyı tekrarlayın -->
+                    <!-- ... Diğer ilanlar ... -->
+                </div>
+
+                <!-- Sayfa 2 (3 ilan) -->
+                <div class="listings-grid" id="page2" style="display: none;">
+                    <!-- İlan 13 -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=13" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">Gaming Laptop MSI</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İzmir, Bornova
+                                </span>
+                                <span class="price">₺35,900</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 1 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=1" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">MacBook Pro M2</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Kadıköy
+                                </span>
+                                <span class="price">₺42,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 2 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- İlan 14 -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=14" alt="İlan Görseli">
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">Elektrikli Scooter</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    İstanbul, Beşiktaş
+                                </span>
+                                <span class="price">₺12,500</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 3 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- İlan 15 -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://picsum.photos/400/300?random=15" alt="İlan Görseli">
+                            <span class="listing-badge">Yeni</span>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="listing-title">DJI Mini 3 Pro Drone</h3>
+                            <div class="listing-details">
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Ankara, Kızılay
+                                </span>
+                                <span class="price">₺28,750</span>
+                            </div>
+                            <div class="listing-footer">
+                                <span class="date"><i class="far fa-clock"></i> 4 saat önce</span>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sayfalama -->
+                <div class="pagination">
+                    <button class="page-btn nav-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="page-numbers">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                    </div>
+                    <button class="page-btn nav-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed by <span class="designer">Kaan Kaya</span> © 2025</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

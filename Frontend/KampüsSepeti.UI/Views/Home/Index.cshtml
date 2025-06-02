@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+    Layout = "~/Views/Default/Index.cshtml";
+}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="hero-title">Kampüs Hayatını Keşfet</h1>
+                <p class="hero-text">Etkinlikler, buluşmalar ve daha fazlası için doğru adrestesin!</p>
+                <a href="@Url.Action("Index", "Event")" class="btn hero-btn">
+                    <i class="fas fa-calendar-alt me-2"></i>Etkinlikleri Keşfet
+                </a>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/campus-life.svg" alt="Kampüs Hayatı" class="hero-image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="features-section">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Neler Sunuyoruz?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Etkinlikler</h3>
+                    <p>Konserler, tiyatrolar, söyleşiler ve daha fazlası...</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Öğrenci Toplulukları</h3>
+                    <p>İlgi alanına göre topluluklar ve etkinlikler</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Özel İndirimler</h3>
+                    <p>Öğrencilere özel kampanyalar ve fırsatlar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2>Kampüs Hayatının Merkezinde Ol!</h2>
+                <p>Hemen üye ol, etkinlikleri keşfet ve kampüs hayatının tadını çıkar.</p>
+                <a href="#" class="btn cta-btn">
+                    <i class="fas fa-user-plus me-2"></i>Hemen Üye Ol
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #6C2EB5, #8B44D1);
+            color: white;
+            padding: 100px 0;
+            margin-top: -16px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-btn {
+            background: white;
+            color: #6C2EB5;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            .hero-btn:hover {
+                background: #f0f0f0;
+                color: #4b1e7a;
+                transform: translateY(-2px);
+            }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: #f7f7fb;
+        }
+
+        .section-title {
+            color: #6C2EB5;
+            font-weight: bold;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+            .feature-card:hover {
+                transform: translateY(-10px);
+            }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #6C2EB5;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #6C2EB5;
+            color: white;
+            padding: 80px 0;
+            margin-bottom: -16px;
+        }
+
+            .cta-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-section p {
+                font-size: 1.25rem;
+                margin-bottom: 2rem;
+            }
+
+        .cta-btn {
+            background: white;
+            color: #6C2EB5;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            .cta-btn:hover {
+                background: #f0f0f0;
+                color: #4b1e7a;
+                transform: translateY(-2px);
+            }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+}

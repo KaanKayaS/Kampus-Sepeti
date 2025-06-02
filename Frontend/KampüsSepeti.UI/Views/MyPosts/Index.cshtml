@@ -1,0 +1,141 @@
+﻿@model IList<PostDto>
+@{
+    ViewData["Title"] = "İlanlarım";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/KampüsSepetiFrontend/myposts.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+<main class="container">
+    <div class="posts-header">
+        <h1>İlanlarım (@ViewBag.TotalPosts)</h1>
+    </div>
+
+    <div class="posts-container">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var post in Model)
+            {
+                <div class="post-card">
+                    <div class="post-date">
+                        <span class="date-label">Yayın Tarihi</span>
+                        <span class="date">@post.CreatedDate.ToString("dd MMM yyyy")</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="post-image">
+                        <img src="@Url.Content(string.IsNullOrEmpty(post.Image) ? "~/KampüsSepetiFrontend/default.jpg" : post.Image)"
+                             alt="Ürün Görseli"
+                             onerror="this.src='@Url.Content("~/KampüsSepetiFrontend/default.jpg")'">
+                    </div>
+
+                    <div class="post-info">
+                        <a href="/Main/PostDetail/@post.Id" class="post-title">@post.Title</a>
+                        <div class="post-stats">
+                            <span class="wishlist-count">
+                                <i class="bi bi-heart-fill"></i>
+                                0
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="post-price">
+                        @post.Price TL
+                    </div>
+
+                    <div class="post-actions">
+                        <button class="edit-btn" onclick="location.href='/Post/Edit/@post.Id'">
+                            <i class="bi bi-pencil"></i>
+                            İlanı Düzenle
+                        </button>
+
+                        <button class="delete-btn" data-id="@post.Id">
+                            <i class="bi bi-trash"></i>
+                            İlanı Kaldır
+                        </button>
+                    </div>
+                </div>
+            }
+
+            <!-- Pagination -->
+            <div class="pagination">
+                @if (ViewBag.HasPreviousPage)
+                {
+                    <a href="/MyPosts/Index?page=@(ViewBag.CurrentPage - 1)" class="page-link prev">
+                        <i class="bi bi-chevron-left"></i> Önceki
+                    </a>
+                }
+
+                <span class="page-info">
+                    Sayfa @ViewBag.CurrentPage / @ViewBag.TotalPages
+                </span>
+
+                @if (ViewBag.HasNextPage)
+                {
+                    <a href="/MyPosts/Index?page=@(ViewBag.CurrentPage + 1)" class="page-link next">
+                        Sonraki <i class="bi bi-chevron-right"></i>
+                    </a>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="no-posts">
+                <i class="bi bi-clipboard-x"></i>
+                <h3>Henüz İlanınız Bulunmamaktadır</h3>
+                <p>Hemen yeni bir ilan oluşturun!</p>
+                <a href="/Post/CreatePost" class="create-post-btn">
+                    <i class="bi bi-plus-lg"></i>
+                    İlan Oluştur
+                </a>
+            </div>
+        }
+    </div>
+</main>
+
+@section Scripts {
+    <script src="~/KampüsSepetiFrontend/myposts.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tüm silme butonlarına event listener ekle
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault(); // Varsayılan davranışı engelle
+                    const postId = this.getAttribute('data-id');
+                    
+                    if (confirm('Bu ilanı silmek istediğinizden emin misiniz?')) {
+                        // API'ye DELETE isteği gönder
+                        fetch(`http://localhost:5000/api/Posts/RemovePost?id=${postId}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                // Başarılı silme işlemi
+                                alert('İlan başarıyla silindi!');
+                                // Sayfayı yenile veya silinen postu DOM'dan kaldır
+                                location.reload();
+                            } else {
+                                throw new Error('Silme işlemi başarısız oldu');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Hata:', error);
+                            alert('İlan silinirken bir hata oluştu!');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
+
+

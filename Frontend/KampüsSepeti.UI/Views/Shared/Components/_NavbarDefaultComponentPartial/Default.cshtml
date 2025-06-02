@@ -1,0 +1,129 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="/Home/Index" class="logo">
+            <img src="~/KampüsSepetiFrontend/k-logo.png" alt="Logo">
+        </a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                <i class="fas fa-map-marker-alt"></i>
+                Lokasyon
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="search-container">
+                    <input type="text" id="citySearch" placeholder="Şehir ara...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="cities-list">
+                    @if (ViewBag.Location != null)
+                    {
+                        foreach (var location in ViewBag.Location)
+                        {
+                            <a href="#" data-city-id="@location.Value" class="city-item">
+                                <i class="fas fa-city"></i>
+                                @location.Text
+                            </a>
+                        }
+                    }
+                    <a href="#" class="all-cities" data-city="all">
+                        <i class="fas fa-globe"></i>
+                        Tüm Şehirler
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-middle">
+        <a href="/Main/Index">İlanlar</a>
+        <a href="/Event/Index">Etkinlikler</a>
+        <a href="/Announcement/Index">Duyurular</a>
+    </div>
+    <div class="nav-right">
+        <!-- Auth Buttons -->
+        @if (!User.Identity.IsAuthenticated)
+        {       
+        <a href="~/Login/Index" class="auth-btn">Giriş Yap</a>
+        <a href="~/Register/Register" class="auth-btn">Kayıt Ol</a>
+        }
+
+        
+        @if (User.Identity.IsAuthenticated)
+        {
+            <!-- Bildirimler -->
+            <div class="nav-icon-wrapper">
+                <i class="bi bi-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+
+            <!-- Mesajlar -->
+            <div class="nav-icon-wrapper">
+                <a href="@Url.Action("Index", "Chat")" style="text-decoration: none; color: inherit;">
+                    <i class="bi bi-envelope"></i>
+                    <span class="notification-badge">2</span>
+                </a>
+            </div>
+        }
+        <!-- İlan Oluştur -->
+        <a href="/Post/CreatePost" class="create-listing-btn">
+            <i class="fas fa-plus"></i>
+            İlan Oluştur
+        </a>
+
+        <!-- Profil Dropdown -->
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="profile-dropdown">
+                <div class="profile-trigger">
+                    <img src="@(string.IsNullOrEmpty(ViewBag.ImagePath) ? Url.Content("~/KampüsSepetiFrontend/default.jpg") : $"http://localhost:5000{ViewBag.ImagePath}")"
+                    alt="Profile"
+                    class="profile-image"
+                    onerror="this.src='@Url.Content("~/KampüsSepetiFrontend/default.jpg")'">
+                </div>
+                    <div class="profile-menu">
+                    <div class="profile-header">
+                        <img src="@(string.IsNullOrEmpty(ViewBag.ImagePath) ? Url.Content("~/KampüsSepetiFrontend/default.jpg") : $"http://localhost:5000{ViewBag.ImagePath}")"
+                        alt="Profile"
+                        class="profile-image"
+                        onerror="this.src='@Url.Content("~/KampüsSepetiFrontend/default.jpg")'">
+                         
+                        <div class="profile-info">
+                            <span class="profile-name">@User.Claims.FirstOrDefault(c => c.Type == "name")?.Value</span>
+                        </div>
+                    </div>
+                    <div class="profile-links">
+                        <a href="/MyPosts/Index?userId=@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value" class="profile-link">
+                            <i class="bi bi-card-list"></i>
+                            İlanlarım
+                        </a>
+                        <a href="/MyFavorite/Favorite?userId=@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value" class="profile-link">
+                            <i class="bi bi-heart"></i>
+                            Favorilerim
+                        </a>
+                        <a href="/MyProfile/@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value" class="profile-link">
+                            <i class="bi bi-gear"></i>
+                            Ayarlar
+                        </a>
+                        <a href="/MyAnnouncement/Index" class="profile-link">
+                            <i class="bi bi-megaphone"></i>
+                            Duyurularım
+                        </a>
+                    </div>
+                    <div class="profile-footer">
+                        <a href="/Login/Logout" class="logout-btn">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Çıkış Yap
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</nav>
+
+}

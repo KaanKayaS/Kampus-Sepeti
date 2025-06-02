@@ -1,0 +1,66 @@
+@model EditAnnouncementDto
+@{
+    ViewData["Title"] = "Duyuru Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/KampüsSepetiFrontend/editannouncement.css">
+
+<main class="edit-announcement-container">
+    <h1>Duyuru Düzenle</h1>
+    <div class="content-wrapper">
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Error"]
+            </div>
+        }
+
+        <form asp-action="Edit" method="post" class="edit-form">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Title">Başlık</label>
+                <input asp-for="Title" class="form-control" required />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description">Açıklama</label>
+                <textarea asp-for="Description" class="form-control" rows="5" required></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationId">Konum</label>
+                <select asp-for="LocationId" class="form-control" required>
+                    <option value="">Konum Seçin</option>
+                    @foreach (var location in ViewBag.Locations)
+                    {
+                        <option value="@location.Id">@location.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="LocationId" class="text-danger"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="save-btn">
+                    <i class="bi bi-save"></i>
+                    Kaydet
+                </button>
+                <a href="@Url.Action("Index")" class="cancel-btn" style="text-decoration: none;">
+                    <i class="bi bi-x"></i>
+                    İptal
+                </a>
+            </div>
+        </form>
+    </div>
+</main>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

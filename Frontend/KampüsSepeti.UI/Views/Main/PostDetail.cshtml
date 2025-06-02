@@ -1,0 +1,119 @@
+﻿@model PostDetailDTO
+@{
+    ViewData["Title"] = "İlan Detayı";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/KampüsSepetiFrontend/postdetail.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+@if(Model != null)
+{
+    <input type="hidden" id="followedUserId" value="@Model.UserId" />
+    <!-- Debug için resim yolunu göster -->
+    <div style="display:none">Debug - Image Path: @Model.User.Image</div>
+
+    <div class="post-detail-container">
+        <!-- Ana İçerik -->
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Sol taraf - Ürün görseli -->
+                <div class="product-image-container">
+                    <img src="@Url.Content(string.IsNullOrEmpty(Model?.Image) ? "~/KampüsSepetiFrontend/default.jpg" : Model.Image)"
+                         alt="Ürün Görseli"
+                         class="product-image"
+                         onerror="this.src='@Url.Content("~/KampüsSepetiFrontend/default.jpg")'">
+                </div>
+
+                <!-- Sağ taraf - Satıcı bilgileri -->
+                <div class="seller-card">
+                    <div class="seller-profile">
+                        <div class="profile-header">
+                            <img src="@(string.IsNullOrEmpty(Model.Image) ? Url.Content("~/KampüsSepetiFrontend/default.jpg") : $"http://localhost:5000{Model.User.Image}")"
+                                 alt="Satıcı Profili" 
+                                 class="profile-image"
+                                 onerror="this.src='@Url.Content("~/KampüsSepetiFrontend/default.jpg")'"
+                                 />
+                            <div class="profile-info">
+                                <a href="profile.html" class="seller-name">@Model.User.FullName</a>
+                                <span class="member-since">Oca 2019'dan beri üye</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seller-actions">
+                        <button class="chat-btn">Sohbet</button>
+                        <button class="follow-btn">
+                            <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span>Takip Et</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alt kısım - Ürün detayları -->
+            <div class="product-details">
+                <div class="main-info">
+                    <h1 class="product-title">@Model.Title</h1>
+                    <div class="price-location">
+                        <div class="price-wishlist">
+                            <span class="price">@Model.Price TL</span>
+                            <button class="wishlist-btn">
+                                <svg class="wishlist-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                                <span class="wishlist-tooltip">İstek Listesine Ekle</span>
+                            </button>
+                        </div>
+                        <span class="location">
+                            <svg class="location-icon" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            @Model.Location.Name
+                        </span>
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label">İlan No:</span>
+                            <span class="value">@Model.Id</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Marka:</span>
+                            <span class="value">@Model.BrandName</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Durum:</span>
+                            <span class="value">@Model.Status.Name</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Kategori:</span>
+                            <span class="value">@Model.Category.Name</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">İlan Tarihi:</span>
+                            <span class="value">@Model.CreatedDate.ToString("dd MMMM yyyy")</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <h3>İlan Açıklaması</h3>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+@section Scripts {
+    <script src="~/KampüsSepetiFrontend/postdetail.js"></script>
+    <script src="~/KampüsSepetiFrontend/index.js"></script>
+}
+
+

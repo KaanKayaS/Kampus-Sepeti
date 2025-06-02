@@ -1,0 +1,17 @@
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\bin\Debug\net8.0\KampüsSepeti.DTO.deps.json
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\bin\Debug\net8.0\KampüsSepeti.DTO.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\bin\Debug\net8.0\KampüsSepeti.DTO.pdb
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.AssemblyInfoInputs.cache
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.AssemblyInfo.cs
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\refint\KampüsSepeti.DTO.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.pdb
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\ref\KampüsSepeti.DTO.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\bin\Debug\net8.0\KampüsSepeti.Application.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\bin\Debug\net8.0\KampüsSepeti.Domain.dll
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\bin\Debug\net8.0\KampüsSepeti.Application.pdb
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\bin\Debug\net8.0\KampüsSepeti.Domain.pdb
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.csproj.AssemblyReference.cache
+C:\Users\Kaan Kaya\source\repos\KampüsSepeti\Frontend\KampüsSepeti.DTO\obj\Debug\net8.0\KampüsSepeti.DTO.csproj.CopyComplete

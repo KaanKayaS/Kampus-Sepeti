@@ -1,0 +1,271 @@
+﻿@model ProfileDto
+@{
+    ViewData["Title"] = "Profil";
+    Layout = "~/Views/Default/Index.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+}
+
+<div class="profile-container" style="min-height: 100vh; padding-top: 120px; padding-bottom: 80px; background-color: #f8f9fa;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h2 class="text-center mb-4 fw-bold text-primary">
+                    @(ViewBag.IsOwnProfile ? "Profilim" : "Kullanıcı Profili")
+                </h2>
+                <div class="row g-4">
+                    <!-- Sol Panel - Profil Fotoğrafı -->
+                    <div class="col-md-4">
+                        <div class="card shadow-sm border-0 rounded-3">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-3">
+                                    <div class="position-relative d-inline-block">
+                                        <img src="@(string.IsNullOrEmpty(Model.Image) ? Url.Content("~/KampüsSepetiFrontend/default.jpg") : $"http://localhost:5000{Model.Image}")"
+                                             class="rounded-circle img-thumbnail shadow" style="width: 180px; height: 180px; object-fit: cover;" alt="Profil Resmi" id="profileImage" />
+                                        @if (ViewBag.IsOwnProfile)
+                                        {
+                                            <div class="position-absolute bottom-0 end-0">
+                                                <button class="btn btn-sm btn-light rounded-circle shadow-sm" onclick="document.getElementById('profileImageInput').click()" title="Profil Resmini Değiştir">
+                                                    <i class="fas fa-camera"></i>
+                                                </button>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                                
+                                <h4 class="text-center fw-bold mb-3">@Model.FullName</h4>
+                                @if (ViewBag.IsOwnProfile)
+                                {
+                                    <input type="file" id="profileImageInput" style="display: none;" accept="image/*" />
+                                    <div class="d-grid gap-2 mt-3">
+                                        <button class="btn btn-outline-primary" onclick="document.getElementById('profileImageInput').click()">
+                                            <i class="fas fa-camera me-2"></i>Fotoğraf Değiştir
+                                        </button>
+                                        <button class="btn btn-outline-danger" id="removeProfilePhotoBtn">
+                                            <i class="fas fa-trash-alt me-2"></i>Fotoğrafı Kaldır
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sağ Panel - Kullanıcı Bilgileri -->
+                    <div class="col-md-8">
+                        <div class="card shadow-sm border-0 rounded-3">
+                            <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center border-bottom">
+                                <h5 class="mb-0 fw-bold">Kişisel Bilgiler</h5>
+                                @if (!ViewBag.IsOwnProfile)
+                                {
+                                    <span class="badge bg-info rounded-pill px-3 py-2">Başka Kullanıcının Profili</span>
+                                }
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="row mb-4">
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-user text-primary me-3"></i>
+                                            <strong>Ad Soyad:</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8" id="fullName">@Model.FullName</div>
+                                </div>
+                                <hr>
+                                <div class="row mb-4">
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-envelope text-primary me-3"></i>
+                                            <strong>E-posta:</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8" id="email">@Model.Email</div>
+                                </div>
+                                <hr>
+                                <div class="row" id="phoneNumberContainer">
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-phone text-primary me-3"></i>
+                                            <strong>Telefon:</strong>
+                                            @if (ViewBag.IsOwnProfile)
+                                            {
+                                                <div class="form-check ms-2" data-bs-toggle="tooltip" title="Telefonumu göster/gizle">
+                                                    <input class="form-check-input" type="checkbox" id="phoneVisibilityCheckbox" @(Model.IsPhoneVisible ? "checked" : "")>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8" id="phoneNumber">
+                                        @if (Model.IsPhoneVisible)
+                                        {
+                                            @Model.PhoneNumber
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted"><i class="fas fa-lock me-2"></i>Gizli</span>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @if (ViewBag.IsOwnProfile)
+    {
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Bootstrap tooltip'leri etkinleştir
+                if (typeof bootstrap !== 'undefined') {
+                    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                        return new bootstrap.Tooltip(tooltipTriggerEl);
+                    });
+                }
+
+                // Profil resmini kaldırma işlemi
+                var removeProfilePhotoBtn = document.getElementById('removeProfilePhotoBtn');
+                if (removeProfilePhotoBtn) {
+                    removeProfilePhotoBtn.addEventListener('click', function() {
+                        if (confirm('Profil resminizi kaldırmak istediğinizden emin misiniz?')) {
+                            const apiUrl = `http://localhost:5000/api/MyProfile/UpdateNullProfilePhoto?id=@ViewBag.UserId`;
+                            console.log('API isteği gönderiliyor:', apiUrl);
+
+                            fetch(apiUrl, {
+                                method: 'PUT',
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                }
+                            })
+                            .then(async response => {
+                                console.log('API yanıt durumu:', response.status);
+                                const responseText = await response.text();
+                                console.log('API yanıtı:', responseText);
+
+                                if (!response.ok) {
+                                    throw new Error(responseText);
+                                }
+                                return responseText;
+                            })
+                            .then(message => {
+                                alert(message);
+                                // Başarılı veya başarısız, API yanıt verdiyse sayfayı yenile
+                                window.location.reload();
+                            })
+                            .catch(error => {
+                                console.error('Hata:', error);
+                                alert(error.message || 'Profil resmi kaldırılırken bir hata oluştu.');
+                            });
+                        }
+                    });
+                } else {
+                    console.error('removeProfilePhotoBtn bulunamadı');
+                }
+
+                // Profil resmi yükleme işlemi
+                var profileImageInput = document.getElementById('profileImageInput');
+                if (profileImageInput) {
+                    profileImageInput.addEventListener('change', function(e) {
+                        const file = e.target.files[0];
+                        if (file) {
+                            const formData = new FormData();
+                            formData.append('ProfilePhoto', file);
+
+                            fetch(`/MyProfile/UpdateProfilePhoto`, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            })
+                            .then(response => {
+                                if (!response.ok) {
+                                    return response.text().then(text => {
+                                        throw new Error(`HTTP error! status: ${response.status}, message: ${text}`);
+                                    });
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                alert('Profil resmi başarıyla güncellendi');
+                                // Sayfayı yenile
+                                window.location.reload();
+                            })
+                            .catch(error => {
+                                console.error('Hata:', error);
+                                alert('Resim yükleme sırasında bir hata oluştu: ' + error.message);
+                            });
+                        }
+                    });
+                } else {
+                    console.error('profileImageInput bulunamadı');
+                }
+
+                // Telefon gizliliği kontrol kutusu işlemi
+                var phoneVisibilityCheckbox = document.getElementById('phoneVisibilityCheckbox');
+                if (phoneVisibilityCheckbox) {
+                    phoneVisibilityCheckbox.addEventListener('change', function() {
+                        var isChecked = this.checked;
+                        console.log("Checkbox durumu:", isChecked);
+
+                        var apiUrl = isChecked
+                            ? `http://localhost:5000/api/MyProfile?id=@ViewBag.UserId`
+                            : `http://localhost:5000/api/MyProfile/UpdateFalsePhoneVisibility?id=@ViewBag.UserId`;
+
+                        console.log("İstek atılacak URL:", apiUrl);
+
+                        fetch(apiUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            }
+                        })
+                        .then(response => {
+                            console.log("API yanıt durumu:", response.status);
+                            if (!response.ok) {
+                                return response.text().then(text => {
+                                    throw new Error(`HTTP error! status: ${response.status}, message: ${text}`);
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log("API yanıtı:", data);
+                            var phoneNumberElement = document.getElementById('phoneNumber');
+                            if (phoneNumberElement) {
+                                if (isChecked) {
+                                    phoneNumberElement.textContent = '@Model.PhoneNumber';
+                                } else {
+                                    phoneNumberElement.innerHTML = '<span class="text-muted"><i class="fas fa-lock me-2"></i>Gizli</span>';
+                                }
+                            } else {
+                                console.error('phoneNumber elementi bulunamadı');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Hata detayı:', error);
+                            this.checked = !isChecked;
+                            
+                            alert(`İşlem sırasında bir hata oluştu!\nHata: ${error.message}`);
+                            
+                            if (confirm('Sayfa yenilensin mi?')) {
+                                window.location.reload();
+                            }
+                        });
+                    });
+                } else {
+                    console.error('phoneVisibilityCheckbox bulunamadı');
+                }
+            });
+        </script>
+    }
+}
+

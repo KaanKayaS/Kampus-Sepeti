@@ -1,0 +1,119 @@
+﻿@model RegisterCommand
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - KampüsSepeti</title>
+    <link rel="stylesheet" href="~/KampüsSepetiFrontend/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="register-box">
+            <div class="logo">
+                <img src="~/KampüsSepetiFrontend/k-logo.png" alt="Logo">
+            </div>
+            <h1>Kayıt Ol</h1>
+            <p class="subtitle">Hemen üye ol, kampüs hayatını kolaylaştır!</p>
+
+            <div class="validation-summary">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+
+            <form id="registerForm" class="register-form" method="post">
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" placeholder="Kullanıcı Adı" asp-for="FullName">
+                    </div>
+                    <div class="validation-message">
+                        <span asp-validation-for="FullName"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="E-posta" asp-for="Email">
+                    </div>
+                    <div class="validation-message">
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Şifre" asp-for="Password">
+                    </div>
+                    <div class="validation-message">
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="Şifre Tekrar" asp-for="ConfirmPassword">
+                    </div>
+                    <div class="validation-message">
+                        <span asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" placeholder="Telefon Numarası" asp-for="PhoneNumber">
+                    </div>
+                    <div class="validation-message">
+                        <span asp-validation-for="PhoneNumber"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        @Html.DropDownListFor(x => x.LocationId, 
+                            (List<SelectListItem>)ViewBag.Location, 
+                            "Şehir Seçin", 
+                            new { @class = "form-control" })
+                    </div>
+                    <div class="validation-message">
+                        <span asp-validation-for="LocationId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-university"></i>
+                        @Html.DropDownListFor(x => x.UniversityId, 
+                            (List<SelectListItem>)ViewBag.University, 
+                            "Üniversite Seçin", 
+                            new { @class = "form-control" })
+                    </div>
+                    <div class="validation-message">
+                        <span asp-validation-for="UniversityId"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="register-btn">Kayıt Ol</button>
+            </form>
+
+            <div class="login-link">
+                Zaten hesabın var mı? <a href="~/Login/Index">Giriş Yap</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/KampüsSepetiFrontend/register.js"></script>
+</body>
+</html>
