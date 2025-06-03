@@ -47,5 +47,6 @@ Frontend:
 ![ilanlarım](https://github.com/user-attachments/assets/635b0682-1c92-45c3-8069-1f4d76589245)
 ![etkinlik](https://github.com/user-attachments/assets/983ca2f4-7e4c-4f56-8dc9-406a885ffa6f)
 ![aatt](https://github.com/user-attachments/assets/e5752d51-32f2-44db-b9d4-246961a12142)
+![chat](https://github.com/user-attachments/assets/856da110-1bed-4826-8650-2fa489a44277)
 
 
